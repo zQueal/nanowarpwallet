@@ -163,7 +163,7 @@ function deriveAddress(hex) {
     let key_bytes = uint4_uint8( hex_uint4 (hex) );
     let checksum = uint5_string( uint4_uint5( uint8_uint4( blake.blake2b(key_bytes, null, 5).reverse() ) ) );
     let c_account = uint5_string( uint4_uint5( hex_uint4 ('0' + hex) ) );
-    return 'xrb_' + c_account + checksum;
+    return 'nano_' + c_account + checksum;
 }
 
 function deriveKeypair (seed) {
